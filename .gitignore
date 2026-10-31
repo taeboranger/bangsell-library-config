@@ -1,0 +1,11 @@
+.env
+.env.*
+.worker.env
+*.pem
+*.key
+*.pfx
+*.sql
+*.dump
+*.log
+.aws/
+.kube/

@@ -1,0 +1,9 @@
+apiVersion: secrets.hashicorp.com/v1beta1
+kind: VaultConnection
+metadata:
+  name: bangsell-library-vault
+  namespace: vault-secrets-operator-system
+  annotations:
+    argocd.argoproj.io/sync-wave: '-3'
+spec:
+  address: http://vault-external.vault.svc:8200

@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: bangsell-library-service
+spec:
+  selector:
+    app.kubernetes.io/name: bangsell-library
+  ports:
+    - port: 80
+      targetPort: http
