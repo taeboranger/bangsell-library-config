@@ -11,6 +11,8 @@
   `admin-username`, `admin-password`, `worker-api-token`
 - VSO 역할: 기존 공용 `config-vso` 재사용
 - 웹/크롤러만 배포합니다. Ollama/GPU 워커는 PC에서 별도로 실행합니다.
+- 상시 감지는 별도 `bangsell-library-monitor` Deployment 한 개에서 실행하며, 웹과 같은 이미지 태그를 사용합니다.
+  기본 탐색은 매일 랜덤 20시간, 추가 감시는 만료까지 24시간 동작합니다.
 - DB는 별도 준비하고 복원합니다. 이 config는 DB 인스턴스를 생성하거나 기존 DB를 변경하지 않습니다.
 
 ```bash

@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bangsell-library-monitor
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: bangsell-library-monitor
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: bangsell-library-monitor
+    spec:
+      terminationGracePeriodSeconds: 60
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1001
+        runAsGroup: 1001
+      containers:
+        - name: monitor
+          image: lightstone1/bangsell-library-prod:latest
+          imagePullPolicy: Always
+          command: [python, -u, /app/crawler/monitor.py]
+          envFrom:
+            - configMapRef:
+                name: bangsell-library-settings
+            - secretRef:
+                name: bangsell-library-secret
+          resources:
+            requests:
+              cpu: 50m
+              memory: 96Mi
+            limits:
+              cpu: '1'
+              memory: 512Mi
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop: [ALL]
