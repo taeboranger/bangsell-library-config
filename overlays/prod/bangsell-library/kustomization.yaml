@@ -2,9 +2,8 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: bangsell-library-prod
 resources:
-  - vault-static-secret.yaml
-  - ../../../base/bangsell-library
+- vault-static-secret.yaml
+- ../../../base/bangsell-library
 images:
-  - name: lightstone1/bangsell-library-prod
-    newName: lightstone1/bangsell-library-prod
-    newTag: latest
+- name: lightstone1/bangsell-library-prod
+  newTag: 5036552c4b89a2dee187dabefdee0b9e285ddc7b
