@@ -9,7 +9,7 @@
 - SOOP 키: `soop-username`, `soop-password` → `SOOP_LOGIN_ID`, `SOOP_LOGIN_PW`
 - 추가 Vault 키: `db-host`, `db-port`, `db-name`, `db-username`, `db-password`,
   `admin-username`, `admin-password`, `worker-api-token`
-- VSO 역할: `bangsell-library-vso`
+- VSO 역할: 기존 공용 `config-vso` 재사용
 - 웹/크롤러만 배포합니다. Ollama/GPU 워커는 PC에서 별도로 실행합니다.
 - DB는 별도 준비하고 복원합니다. 이 config는 DB 인스턴스를 생성하거나 기존 DB를 변경하지 않습니다.
 
