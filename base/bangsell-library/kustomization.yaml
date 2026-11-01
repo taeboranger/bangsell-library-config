@@ -5,6 +5,8 @@ resources:
   - monitor-deployment.yaml
   - service.yaml
   - ingress.yaml
+  - certificate.yaml
+  - certificate-anyproject.yaml
 configMapGenerator:
   - name: bangsell-library-settings
     literals:
