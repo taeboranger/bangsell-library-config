@@ -6,4 +6,4 @@ resources:
 - ../../../base/bangsell-library
 images:
 - name: lightstone1/bangsell-library-prod
-  newTag: 4180b2a0d4c7988707bd829ae5819fb175301ef0
+  newTag: e6cf46e32efdf63ee8d3212b5605291186e301c7
