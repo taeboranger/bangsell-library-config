@@ -14,21 +14,8 @@ spec:
   - hosts:
     - bangsell.anyproject.dev
     secretName: bangsell-library-anyproject-tls
-  - hosts:
-    - bangsell.cagea1.com
-    secretName: bangsell-library-tls
   rules:
   - host: bangsell.anyproject.dev
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: bangsell-library-service
-            port:
-              number: 80
-  - host: bangsell.cagea1.com
     http:
       paths:
       - path: /

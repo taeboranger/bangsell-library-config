@@ -27,4 +27,4 @@ Vault 정책은 `kv/data/bangsell-library-secret` 읽기 권한과
 
 ## Domain migration
 
-Primary: `bangsell.anyproject.dev`. The previous `bangsell.cagea1.com` ingress and certificate remain as compatibility aliases. New-domain TLS uses ClusterIssuer `letsencrypt-anyproject`; old-domain TLS keeps its original issuer. Cloudflare Tunnel routes and DNS are configured separately.
+Only `bangsell.anyproject.dev` is supported. The legacy cagea1.com hostname, TLS certificate resource and allowed origin have been retired. TLS uses ClusterIssuer `letsencrypt-anyproject`. Cloudflare Tunnel routes and DNS must not reintroduce the legacy alias.
