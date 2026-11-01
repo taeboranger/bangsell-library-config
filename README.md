@@ -2,7 +2,7 @@
 
 대상 저장소: https://github.com/taeboranger/bangsell-library-config.git
 
-- 도메인: `bangsell.cagea1.com`
+- 도메인: `bangsell.anyproject.dev`
 - 네임스페이스: `bangsell-library-prod`
 - 이미지: `lightstone1/bangsell-library-prod`
 - Vault KV v2: `kv/data/bangsell-library-secret`
@@ -24,3 +24,7 @@ kubectl apply -k overlays/prod
 Vault 정책은 `kv/data/bangsell-library-secret` 읽기 권한과
 `bangsell-library-prod/bangsell-library-vault-auth` ServiceAccount 바인딩이 필요합니다.
 운영 준비·DB 이전·PC 실행에 대한 전체 절차는 프로젝트 저장소의 `docs/MIGRATION.md`를 참고하세요.
+
+## Domain migration
+
+Primary: `bangsell.anyproject.dev`. The previous `bangsell.cagea1.com` ingress and certificate remain as compatibility aliases. New-domain TLS uses ClusterIssuer `letsencrypt-anyproject`; old-domain TLS keeps its original issuer. Cloudflare Tunnel routes and DNS are configured separately.

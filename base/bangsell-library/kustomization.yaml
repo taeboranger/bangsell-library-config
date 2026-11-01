@@ -13,5 +13,5 @@ configMapGenerator:
       - ANALYSIS_MODE=remote
       - ANALYZE_ON_START=true
       - AUTH_REQUIRED=true
-      - APP_ORIGIN=https://bangsell.cagea1.com
+      - APP_ORIGIN=https://bangsell.anyproject.dev
       - TZ=Asia/Seoul
